@@ -1,4 +1,6 @@
 import os
+from typing import Optional
+
 from dotenv import load_dotenv
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
@@ -19,7 +21,7 @@ def ping():
     return 'pong!'
 
 @app.get('/api/classify')
-def classify(sequence: str, candidate_labels: str, multi_label: bool):
+def classify(sequence: str, candidate_labels: str, multi_label: Optional[bool] = False):
     candidate_labels = [label.strip() for label in candidate_labels.split(',')]
     result = classifier(sequence, candidate_labels, multi_label=multi_label)
     response = []
