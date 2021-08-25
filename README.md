@@ -27,3 +27,7 @@ ZSL_MODEL=typeform/mobilebert-uncased-mnli
 ```
 uvicorn main:app
 ```
+
+# Demo
+![demo](demo/fast-api-zsl-web-demo.gif)  
+This demo uses the following model: [vicgalle/xlm-roberta-large-xnli-anli](https://huggingface.co/vicgalle/xlm-roberta-large-xnli-anli)
